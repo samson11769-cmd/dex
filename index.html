@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEXCon25 - Digital Experience Conference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4B4BC2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #5D5CDE 0%, #4B4BC2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary">DEXCon25</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#event-info" class="text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Event Info</a>
+                        <a href="#agenda" class="text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Agenda</a>
+                        <a href="#speakers" class="text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Speakers</a>
+                        <a href="#why-attend" class="text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Why Attend</a>
+                        <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors">Register</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#event-info" class="block text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-base font-medium">Event Info</a>
+                <a href="#agenda" class="block text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-base font-medium">Agenda</a>
+                <a href="#speakers" class="block text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-base font-medium">Speakers</a>
+                <a href="#why-attend" class="block text-gray-700 dark:text-gray-300 hover:text-primary px-3 py-2 text-base font-medium">Why Attend</a>
+                <a href="#contact" class="block bg-primary text-white px-3 py-2 text-base font-medium rounded-lg mx-3 text-center">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">#FutureForward</h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8">Digital Experience Conference</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+                Join industry leaders, innovators, and community builders to explore the future of product development, design, and strategy. 
+                Connect, learn, and be inspired at the premier event for digital experience professionals.
+            </p>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto mb-12">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-lg">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt mr-3 text-2xl"></i>
+                        <span class="font-semibold">24 October 2025</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock mr-3 text-2xl"></i>
+                        <span class="font-semibold">09:00 - 17:00</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-3 text-2xl"></i>
+                        <span class="font-semibold">Cathay City</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
+                Register Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Event Info -->
+    <section id="event-info" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Event Information</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    DEXCon25 provides insight and inspiration for driving digital innovation across globally recognized challenges and opportunities, 
+                    from a Hong Kong context.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Conference Highlights</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-lightning-bolt text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Lightning Talks & Rapid Fire Sessions</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Six 7-minute presentations covering Design, Product, Strategy, Portfolio, Product Ops, and Delivery.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-brain text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Psychology of Experience</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Deep dive into human behavior and its impact on digital experiences.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-book-open text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Storytelling Workshop</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Learn from failure, resilience, and bold pivots through interactive storytelling.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-handshake text-primary text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-2">Networking Opportunities</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Connect with industry leaders during breaks, lunch, and evening cocktails.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Event Schedule Overview</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-600">
+                            <span class="font-semibold">Registration & Setup</span>
+                            <span class="text-primary">08:00 - 09:00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-600">
+                            <span class="font-semibold">Morning Sessions</span>
+                            <span class="text-primary">09:00 - 12:00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-600">
+                            <span class="font-semibold">Lunch & Experience Booths</span>
+                            <span class="text-primary">12:00 - 14:30</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-600">
+                            <span class="font-semibold">Afternoon Block</span>
+                            <span class="text-primary">14:30 - 16:15</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">Evening Cocktails</span>
+                            <span class="text-primary">17:00+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Agenda -->
+    <section id="agenda" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Conference Agenda</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">A full day of insights, networking, and innovation</p>
+            </div>
+
+            <!-- Morning Block -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-sun text-yellow-500 mr-3"></i>
+                    Morning Block
+                </h3>
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Reception & Registration</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">09:00 - 09:30</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Lanyards & swag pickup</p>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <strong>PIC:</strong> @Amy Wong
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Opening Speech</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">09:35 - 09:45</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Welcome speech, DEXCon25 vision and context, setting the tone of the day</p>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <strong>Speaker:</strong> @Andrew Eldon
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Rapid Fire Talks - 6 x 7 minutes</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">10:00 - 10:45</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            <div>• Design: "Designing with Empathy: Inclusive UX at Scale"</div>
+                            <div>• Product: "Small Bets, Big Outcomes: Rapid Product Discovery"</div>
+                            <div>• Strategy: "Connecting the Dots: Our Strategic Compass"</div>
+                            <div>• Portfolio: "Vision, Value, Velocity: Managing What Matters"</div>
+                            <div>• Product Ops: "Operational Zen: Driving Efficiency Across Teams"</div>
+                            <div>• Delivery: "Living the Loop: Agile in Aviation"</div>
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <strong>Speakers:</strong> All Heads of Departments
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">External Keynote: The Future of Digital Travel</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">11:00 - 11:45</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">20-30 mins sharing + 15 mins Q&A covering AI Platform Trip Planning and Personalization Journey</p>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <strong>Speaker:</strong> Senior leader from top airline/digital consultancy/travel tech firm
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Afternoon Block -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-sun text-orange-500 mr-3"></i>
+                    Afternoon Block
+                </h3>
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Lunch & Experience Booths</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">12:00 - 14:30</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Casual catered lunch with assigned seating + Interactive booths featuring design system demos, product journey maps, Poly U Empathy Lab, and "We are DEX!" showcase</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Psychology of Experience</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">14:30 - 15:15</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">"Why Humans Do What They Do: Lessons for Digital Experiences"</p>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <strong>Speaker:</strong> Behavioral designer, customer psychologist, or service design leader
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finale Block -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <i class="fas fa-moon text-purple-500 mr-3"></i>
+                    Finale Block
+                </h3>
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Special Segment: "Storytelling from the Edge"</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">15:15 - 16:15</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Interactive storytelling workshop covering failure, resilience, unexpected insights, and bold pivots</p>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <strong>Facilitators:</strong> MC and DEXers
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold text-primary">Closing & Group Photo</h4>
+                            <span class="text-lg font-medium text-gray-500 dark:text-gray-400">16:15 - 16:45</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">Official closing and group photography session</p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-primary to-primary-dark text-white p-6 rounded-xl shadow-lg">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-xl font-semibold">Evening Cocktails</h4>
+                            <span class="text-lg font-medium">17:00 onwards</span>
+                        </div>
+                        <p class="opacity-90">Join us for evening cocktails at Dakota/Catalina (venue TBC)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Featured Speakers</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">Learn from industry leaders and innovation experts</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-primary-dark rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+                        AE
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Andrew Eldon</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Opening Keynote Speaker</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">DEXCon25 vision and strategic context</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+                        TBC
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">External Keynote Speaker</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Future of Digital Travel</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">Senior leader from top airline/digital consultancy</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+                        PS
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Psychology Expert</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Psychology of Experience</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">Behavioral designer or customer psychologist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Attend -->
+    <section id="why-attend" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Why Attend DEXCon25?</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    DEXCon25 is designed for business leaders, product managers, designers, and those responsible for digital transformation and user experience strategies.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center card-hover p-6">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Learn from Changemakers</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Gain insights from recognized leaders in digital experience and product innovation.</p>
+                </div>
+
+                <div class="text-center card-hover p-6">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Build Key Relationships</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Connect with stakeholders, innovators, and thought leaders in the digital space.</p>
+                </div>
+
+                <div class="text-center card-hover p-6">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Discover Innovation</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Explore cutting-edge solutions and methodologies in product development.</p>
+                </div>
+
+                <div class="text-center card-hover p-6">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Strategic Insights</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Learn about strategic approaches to digital transformation and user experience.</p>
+                </div>
+
+                <div class="text-center card-hover p-6">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hands-on Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Participate in interactive workshops and experience booths for practical skills.</p>
+                </div>
+
+                <div class="text-center card-hover p-6">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Future-Forward Thinking</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Be part of the growing ambition for digital innovation and experience design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Registration -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-6">Register for DEXCon25</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Don't miss this opportunity to connect, learn, and be inspired by the future of digital experience.
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium mb-2">First Name</label>
+                            <input type="text" id="firstName" name="firstName" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium mb-2">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+852 XXXX XXXX" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="block text-sm font-medium mb-2">Company</label>
+                        <input type="text" id="company" name="company" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                    </div>
+                    
+                    <div>
+                        <label for="role" class="block text-sm font-medium mb-2">Job Title</label>
+                        <input type="text" id="role" name="role" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-4">Which sessions would you like to attend? (Select all that apply)</label>
+                        <div class="space-y-3">
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="opening-speech" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">Opening Speech</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Welcome speech and DEXCon25 vision (09:35-09:45)</p>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="rapid-fire-talks" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">Rapid Fire Talks</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">6 x 7-minute talks on Design, Product, Strategy & more (10:00-10:45)</p>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="keynote-digital-travel" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">External Keynote: The Future of Digital Travel</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">AI Platform Trip Planning & Personalization (11:00-11:45)</p>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="experience-booths" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">Experience Booths</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Interactive demos, journey maps & Poly U Empathy Lab (12:00-14:30)</p>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="psychology-experience" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">Psychology of Experience</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Understanding human behavior in digital experiences (14:30-15:15)</p>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="storytelling-workshop" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">Storytelling from the Edge</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Interactive workshop on failure, resilience & insights (15:15-16:15)</p>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-start">
+                                <input type="checkbox" name="sessions[]" value="evening-cocktails" class="mt-1 w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <div class="ml-3">
+                                    <span class="text-base font-medium">Evening Cocktails</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Networking drinks at Dakota/Catalina (17:00 onwards)</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="interest" class="block text-sm font-medium mb-2">What interests you most about DEXCon25?</label>
+                        <select id="interest" name="interest" class="w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors" required>
+                            <option value="">Select an option</option>
+                            <option value="keynotes">Keynote presentations</option>
+                            <option value="workshops">Interactive workshops</option>
+                            <option value="networking">Networking opportunities</option>
+                            <option value="innovation">Innovation showcases</option>
+                            <option value="all">All of the above</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-6 rounded-lg transition-colors text-lg">
+                        Register for DEXCon25
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">DEXCon25</h3>
+                    <p class="text-gray-400">Digital Experience Conference - Where innovation meets inspiration.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#event-info" class="block text-gray-400 hover:text-white transition-colors">Event Info</a>
+                        <a href="#agenda" class="block text-gray-400 hover:text-white transition-colors">Agenda</a>
+                        <a href="#speakers" class="block text-gray-400 hover:text-white transition-colors">Speakers</a>
+                        <a href="#why-attend" class="block text-gray-400 hover:text-white transition-colors">Why Attend</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>Email: info@dexcon25.com</p>
+                        <p>Phone: +852 XXXX XXXX</p>
+                        <p>Location: Cathay City, Hong Kong</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 dark:border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 DEXCon25. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection and toggle
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Create custom success modal
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-md w-full text-center">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Registration Successful!</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Thank you for registering for DEXCon25. We'll send you more details soon!</p>
+                    <button onclick="this.closest('.fixed').remove()" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Close
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95', 'dark:bg-gray-800/95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('bg-white/95', 'dark:bg-gray-800/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
