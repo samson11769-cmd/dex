@@ -1203,28 +1203,46 @@
                     const reg = doc.data();
                     data.push([
                         `${reg.firstName} ${reg.lastName}`,
-                        reg.email,
-                        reg.company,
-                        reg.role,
-                        reg.phone,
-                        reg.interest,
+                        reg.email || '',
+                        reg.company || '',
+                        reg.role || '',
+                        reg.phone || '',
+                        reg.interest || '',
                         reg.sessions ? reg.sessions.join('; ') : '',
                         new Date(reg.registrationDate).toLocaleString(),
-                        reg.registrationId
+                        reg.registrationId || ''
                     ]);
                 });
 
-                const csvContent = data.map(row => 
-                    row.map(field => `"${field}"`).join(',')
-                ).join('\\n');
+                // 修復 CSV 格式 - 使用正確的換行符和 BOM
+                const csvContent = '\uFEFF' + data.map(row => 
+                    row.map(field => {
+                        // 處理包含逗號、引號或換行的字段
+                        const fieldStr = String(field || '');
+                        if (fieldStr.includes(',') || fieldStr.includes('"') || fieldStr.includes('\n')) {
+                            return `"${fieldStr.replace(/"/g, '""')}"`;
+                        }
+                        return fieldStr;
+                    }).join(',')
+                ).join('\r\n');
 
-                const blob = new Blob([csvContent], { type: 'text/csv' });
+                const blob = new Blob([csvContent], { 
+                    type: 'text/csv;charset=utf-8;' 
+                });
+                
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = `DEXCon25_Registrations_${new Date().toISOString().split('T')[0]}.csv`;
+                a.style.display = 'none';
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
                 window.URL.revokeObjectURL(url);
+                
+                console.log('✅ CSV exported successfully with', data.length - 1, 'registrations');
+            }).catch(error => {
+                console.error('❌ CSV export error:', error);
             });
         }
 
