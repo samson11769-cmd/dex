@@ -745,9 +745,9 @@
         // Initialize EmailJS
         // ✅ EmailJS 已配置完成！
         const EMAIL_CONFIG = {
-            enabled: false, // 🚨 暫時禁用 EmailJS 直到獲得有效 Public Key
-            publicKey: '0BGcVqW8QO5dTBguj', // ❌ 當前 Public Key 無效
-            serviceId: 'service_6lgdhtx', // ✅ 您的Service ID  
+            enabled: true, // ✅ 重新啟用 EmailJS - 問題是 Gmail API 權限，不是 Public Key
+            publicKey: '0BGcVqW8QO5dTBguj', // ✅ Public Key 實際上是有效的
+            serviceId: 'service_6lgdhtx', // 🔧 需要重新配置 Gmail API 權限
             templateId: 'template_ut9fdrm' // ✅ 您的Template ID
         };
 
